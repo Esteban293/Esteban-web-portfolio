@@ -8,8 +8,7 @@ max-width:500px;
 }
 
 .square {
-    Background-color: purple;
-    width: 100px;
-    height: 100px;
-    border: solid 1px black;
+    Background-color: teal;
+    width: 30px;
+    height: 30px;
 }
