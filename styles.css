@@ -1,14 +1,49 @@
+html {
+    height: 100%;
+}
+
+
+header {
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+
+}
+
 .container {
-   display:grid;
-   grid-template-rows: repeat(3, 1fr);
-   grid-template-columns:repeat(3,1fr);
-gap:10px;
-width:100%;
-max-width:500px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .square {
-    Background-color: teal;
-    width: 30px;
-    height: 30px;
+    Background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: 100px;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+body {
+    height: 100%;
+    background-color: orange;
+    margin: 0;
 }
