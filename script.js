@@ -14,8 +14,36 @@ function count() {
 
 resetButton.addEventListener('click', count);
 
+
 function createX(square) {
     square.textContent = 'X';
     currentPlayer.textContent = 'O';
     console.log('Button presssed')
+}
+
+
+function handleClick(event) {
+    const square = event.target;
+    createX(square);
+}
+
+// const squares = document.querySelectorAll('.square');
+
+function gameLoop(event) {
+    const square = event.target;
+    if (currentPlayer.textcontent = 'o') {
+        square.textContent = 'o';
+        currentPlayer.textContent = 'x';
+    }
+    else {
+        square.textContent = 'x';
+        currentPlayer.textContent = 'o';
+    }
+
+}
+
+for (const square of squares) {
+    square.addEventListener('click', gameLoop);
+    console.log('squares', square);
+
 }
