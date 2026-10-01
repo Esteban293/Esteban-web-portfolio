@@ -1,5 +1,6 @@
 console.log("Hello world!");
 
+// Elements
 const resetButton = document.querySelector('#restart');
 const squares = document.querySelectorAll('.square');
 const currentPlayer = document.querySelector('#current-player');
@@ -7,6 +8,13 @@ const currentPlayer = document.querySelector('#current-player');
 
 let counter = 0;
 
+// Functions
+// Create a new function
+function playTurn(event) {
+    const square = event.target;
+    square.textContent = 'x';
+    
+}
 function count() {
     counter = counter + 1;
     console.log('Current clicks' + counter);
@@ -27,11 +35,10 @@ function handleClick(event) {
     createX(square);
 }
 
-// const squares = document.querySelectorAll('.square');
 
 function gameLoop(event) {
     const square = event.target;
-    if (currentPlayer.textcontent = 'o') {
+    if (currentPlayer.textContent = 'o') {
         square.textContent = 'o';
         currentPlayer.textContent = 'x';
     }
@@ -42,8 +49,20 @@ function gameLoop(event) {
 
 }
 
+function switchPlayer(){
+
+    if(currentPlayer.textContent === 'x'){
+        currentPlayer.textContent = 'o';
+    } else {
+        currentPlayer.textContent = 'x';
+    }
+    
+}
+
 for (const square of squares) {
-    square.addEventListener('click', gameLoop);
+    square.addEventListener('click', playTurn);
     console.log('squares', square);
 
 }
+
+
