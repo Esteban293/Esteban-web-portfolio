@@ -4,6 +4,11 @@ console.log("Hello world!");
 const resetButton = document.querySelector('#restart');
 const squares = document.querySelectorAll('.square');
 const currentPlayer = document.querySelector('#current-player');
+const messageText = document.getElementById("message");
+const xScoreText = document.getElementById('x-score');
+const oScoreText = document.getElementById('o-score');
+const drawScoreText = document.getElementById('draw-score');
+
 const winningLines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -16,12 +21,11 @@ const winningLines = [
 ];
 
 let gameOver = false;
-
-const messageText = document.getElementById("message");
-
 let counter = 0;
 let moves = 0;
-
+let xWins = 0;
+let oWins = 0;
+let draws = 0;
 // Functions
 function switchPlayer() {
     if (currentPlayer.textContent === 'x') {
@@ -40,7 +44,12 @@ function checkWinner() {
         if (first !== '' && first === second && first === third) {
             console.log(first + 'wins!');
             gameOver = true;
+            return
         }
+    }
+    if (moves === 9) {
+        messageText.textContent = "Its a draw!";
+        gameOver = true;
     }
 }
 
@@ -57,18 +66,26 @@ function playTurn(event) {
 function count() {
     counter = counter + 1;
     console.log('Current clicks' + counter);
+    xWins
 }
 
-resetButton.addEventListener('click', count);
+function resetGame() {
+    gameOver = false;
+    messageText.textContent = '';
+    currentPlayer.textContent = 'x';
+    moves = 0;
+    for (const square of squares) {
+        square.textContent = '';
+    }
+}
+
+
+resetButton.addEventListener('click', resetGame);
 
 for (const square of squares) {
     square.addEventListener('click', playTurn)
 }
 
-function resetGame(){
-gameOver = false;
-messageText.textContent = '';
-}
 
 
 
