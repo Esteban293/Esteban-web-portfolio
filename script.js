@@ -4,7 +4,7 @@ console.log("Hello world!");
 const resetButton = document.querySelector('#restart');
 const squares = document.querySelectorAll('.square');
 const currentPlayer = document.querySelector('#current-player');
-const messageText = document.getElementById("message");
+const messageText = document.getElementById('message');
 const xScoreText = document.getElementById('x-score');
 const oScoreText = document.getElementById('o-score');
 const drawScoreText = document.getElementById('draw-score');
@@ -43,6 +43,7 @@ function checkWinner() {
         const third = squares[line[2]].textContent;
         if (first !== '' && first === second && first === third) {
             console.log(first + 'wins!');
+             messageText.textContent = (first + 'wins!');
             gameOver = true;
             return
         }
