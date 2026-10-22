@@ -29,13 +29,35 @@ header {
 
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(4);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     padding: 32px;
 }
 
-.poster{
+.poster {
     aspect-ratio: 2/3;
     background-color: teal;
     border-radius: 8px;
+}
+
+.card {
+    background-color: #1F1F1F;
+    border-radius: 12px;
+    padding: 12px;
+    transition: transform 0.3s ease;
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+.card:hover{
+     transform: scale(1.05);
+}
+
+.rating-high{
+display: inline-block;
+padding: 4px 1px;
+border-radius: 6px;
+font-weight: bold;
 }
