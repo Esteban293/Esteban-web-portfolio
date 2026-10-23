@@ -20,6 +20,7 @@ header {
     background-color: transparent;
     color: white;
     transition: background-color 0.3s ease;
+    cursor: pointer
 }
 
 .nav-btn:hover {
@@ -45,19 +46,59 @@ header {
     border-radius: 12px;
     padding: 12px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 
     h3 {
         font-size: 18px;
     }
 }
 
-.card:hover{
-     transform: scale(1.05);
+.card:hover {
+    transform: scale(1.05);
 }
 
-.rating-high{
-display: inline-block;
-padding: 4px 1px;
-border-radius: 6px;
-font-weight: bold;
+.rating {
+    display: inline-block;
+    padding: 4px 1px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.high {
+    background-color: #2E7D32;
+}
+
+.low {
+    background-color: #C62828;
+}
+
+#featured {
+    margin: 32px;
+    padding: 48px 32px;
+    border-radius: 12px;
+    background-color: #164B8B;
+}
+
+#featured h2 {
+    font-size: 40px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #333;
+    border-top-color: teal;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
 }
