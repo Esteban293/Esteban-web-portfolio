@@ -39,6 +39,7 @@ header {
     aspect-ratio: 2/3;
     background-color: teal;
     border-radius: 8px;
+    background-size: cover;
 }
 
 .card {
