@@ -28,3 +28,12 @@ function getEndpoint(page) {
     }
 
 }
+
+const imageUrl = "https://static.wikia.nocookie.net/fastandfurious/images/0/04/The_Fast_and_the_Furious_%28DVD_Cover%29.jpeg/revision/latest?cb=20150501043627";
+
+function makePosterUrl(posterPath) {
+    return imageUrl + posterPath;
+
+}
+
+console.log(makePosterUrl("/poster.jpg"))
